@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#page-change-payments {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #007BFF;
+    height: 65px;
+    padding-inline-start: 10%;
+}
+
+header a {
+    color: rgb(255, 255, 255, .5);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+header .active {
+    color: rgb(255, 255, 255, 1);
+}
+
+header a:hover {
+    color: rgb(255, 255, 255, 1);
+}
+
+#page-change-payments form {
+    margin: 80px auto;
+    padding: 64px;
+    max-width: 730px;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-change-payments form h1 {
+    font-size: 36px;
+}
+
+#page-change-payments form fieldset {
+    margin-top: 64px;
+    min-inline-size: auto;
+    border: 0;
+}
+
+#page-change-payments form legend {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#page-change-payments form legend h2 {
+    font-size: 24px;
+}
+
+#page-change-payments form .field-group {
+    flex: 1;
+    display: flex;
+}
+
+#page-change-payments form .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+#page-change-payments form .field input[type="text"], #page-change-payments form .field input[type="email"], #page-change-payments form .field input[type="number"], #page-change-payments form .field textarea {
+    flex: 1;
+    background: #fff;
+    border-radius: .25rem;
+    border: 1px solid #ced4da;
+    padding: 16px 24px;
+    font-size: 16px;
+}
+
+#page-change-payments form .field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 16px 24px;
+    font-size: 16px;
+    color: #000;
+}
+
+#page-change-payments form .field input::placeholder {
+    color: #a0a0b2;
+}
+
+#page-change-payments form .field label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+#page-change-payments form .field :disabled {
+    cursor: not-allowed;
+}
+
+#page-change-payments form .field-group .field+.field {
+    margin-left: 24px;
+}
+
+#page-change-payments form .field-group input+input {
+    margin-left: 24px;
+}
+
+#page-change-payments form .field-check {
+    flex-direction: row;
+    align-items: center;
+}
+
+#page-change-payments form .field-check input[type="checkbox"] {
+    background: #f0f0f5;
+}
+
+#page-change-payments form .field-check label {
+    margin: 0 0 0 8px;
+}
+
+#page-change-payments form .leaflet-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+#page-change-payments form button {
+    width: 260px;
+    height: 56px;
+    background: #007bff;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    align-self: flex-end;
+    margin-top: 40px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+#page-change-payments form button:hover {
+    background: #0069d9;
+}
