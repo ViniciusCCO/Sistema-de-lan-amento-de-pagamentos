@@ -3,6 +3,7 @@ import express from 'express'
 import upload from './config/multer'
 
 import { celebrate, Joi } from 'celebrate'
+import validation from './schema/validation'
 
 import PaymentsController from './controllers/paymentsController'
 import FilesController from './controllers/filesController'
@@ -17,14 +18,7 @@ routes.get('/payments/:id', paymentsController.show)
 
 routes.post(
     '/payments',
-    celebrate({
-        body: Joi.object().keys({
-            title: Joi.string().min(5).max(100).required(),
-            value: Joi.number().precision(2).required(),
-            date: Joi.string().isoDate().required(),
-            comment: Joi.string().optional().allow('')
-        })
-    }, {
+    celebrate(validation, {
         abortEarly: false
     }),
     paymentsController.create
@@ -32,14 +26,7 @@ routes.post(
 
 routes.put(
     '/payments/:id',
-    celebrate({
-        body: Joi.object().keys({
-            title: Joi.string().min(5).max(100).required(),
-            value: Joi.number().precision(2).required(),
-            date: Joi.string().isoDate().required(),
-            comment: Joi.string().optional().allow('')
-        })
-    }, {
+    celebrate(validation, {
         abortEarly: false
     }),
     paymentsController.update)
