@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import api from '../../services/api'
 import Dropzone from '../../components/Dropzone'
 
 import './styles.css'
 
+interface FileError {
+    error: String
+    row: Number
+    collumn: String
+    value: any
+}
+
 const UploadFiles: React.FC = () => {
     const [selectedFile, setSelectedFile] = useState<File>()
+    
+    const history = useHistory()
 
     async function handleSubmit() {
         const data = new FormData()
@@ -18,10 +27,10 @@ const UploadFiles: React.FC = () => {
 
         await api.post('file', data)
             .then((res) => {
-                return alert('Pagamento cadastrado com sucesso!')
+                alert('Pagamento cadastrado com sucesso!')
+                return history.go(-1)
             }, (res) => {
-                console.log(res)
-                return alert('Ocorreu um erro, tente novamente!')
+                return alert('Falha ao cadastrar. Verifique os dados do arquivo!')
             })
     }
 

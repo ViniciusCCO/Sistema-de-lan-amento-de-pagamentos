@@ -46,10 +46,10 @@ const Home: React.FC = () => {
 
         await api.post('payments', data)
             .then((res) => {
-                return alert('Pagamento cadastrado com sucesso!')
+                alert('Pagamento cadastrado com sucesso!')
             }, (res) => {
                 console.log(res)
-                return alert('Ocorreu um erro, tente novamente!')
+                alert('Ocorreu um erro, tente novamente!')
             })
     }
 
